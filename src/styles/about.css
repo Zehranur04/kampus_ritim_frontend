@@ -1,0 +1,329 @@
+.about-shell{
+  min-height:100vh;
+  padding:96px 24px 48px;
+  max-width:1100px;
+  margin:0 auto;
+  color:var(--text);
+}
+
+.about-hero{
+  display:grid;
+  grid-template-columns:minmax(0,2fr) minmax(0,1.3fr);
+  gap:32px;
+  align-items:flex-start;
+  margin-bottom:40px;
+}
+
+.about-hero-content h1{
+  font-size:clamp(2.1rem, 3vw, 2.6rem);
+  margin:12px 0 12px;
+}
+
+.about-hero-content p{
+  color:var(--muted);
+  font-size:0.98rem;
+  line-height:1.7;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:0.75rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  border:1px solid var(--border);
+  background:radial-gradient(circle at 0 0, rgba(99,102,241,0.18), transparent 55%);
+}
+
+.about-hero-meta{
+  margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.about-hero-meta h3{
+  font-size:1.4rem;
+}
+
+.about-hero-meta p{
+  font-size:0.8rem;
+  color:var(--muted);
+}
+
+.about-hero-card{
+  background:linear-gradient(135deg, rgba(99,102,241,0.12), rgba(34,211,238,0.05));
+  border-radius:20px;
+  padding:22px 20px;
+  border:1px solid rgba(148,163,184,0.25);
+  box-shadow:0 18px 40px rgba(15,23,42,0.8);
+}
+
+.about-hero-card h2{
+  margin-bottom:8px;
+  font-size:1.2rem;
+}
+
+.about-hero-card p{
+  color:var(--muted);
+  font-size:0.92rem;
+  line-height:1.7;
+  margin-bottom:12px;
+}
+
+.about-hero-card ul{
+  padding-left:18px;
+  margin:0;
+  color:var(--text);
+  font-size:0.9rem;
+}
+
+/* Genel section stilleri */
+
+.about-section{
+  margin-top:40px;
+}
+
+.about-section > h2{
+  font-size:1.4rem;
+  margin-bottom:18px;
+}
+
+.grid-2{
+  display:grid;
+  gap:24px;
+}
+
+.grid-2{
+  grid-template-columns:repeat(2, minmax(0,1fr));
+}
+
+.about-card{
+  background:var(--card);
+  border-radius:18px;
+  border:1px solid var(--border);
+  padding:20px 18px;
+  box-shadow:0 12px 25px rgba(15,23,42,0.7);
+}
+
+.about-card p{
+  font-size:0.94rem;
+  line-height:1.7;
+}
+
+/* Özellik kartları */
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:20px;
+}
+
+.feature-card{
+  background:var(--card);
+  border-radius:16px;
+  border:1px solid var(--border);
+  padding:18px 16px;
+  position:relative;
+  overflow:hidden;
+}
+
+.feature-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:radial-gradient(circle at 0 0, rgba(99,102,241,0.3), transparent 60%);
+  transition:opacity .25s ease-out;
+}
+
+.feature-card:hover::before{
+  opacity:1;
+}
+
+.feature-card h3{
+  margin-bottom:6px;
+  font-size:1rem;
+}
+
+.feature-card p{
+  color:var(--muted);
+  font-size:0.9rem;
+  line-height:1.6;
+}
+
+/* Timeline */
+
+.timeline{
+  border-left:1px solid var(--border);
+  margin-top:10px;
+  padding-left:18px;
+  display:grid;
+  gap:16px;
+}
+
+.timeline-item{
+  position:relative;
+}
+
+.timeline-item .dot{
+  position:absolute;
+  left:-9px;
+  top:6px;
+  width:11px;
+  height:11px;
+  border-radius:999px;
+  background:radial-gradient(circle at 30% 30%, var(--pri2), var(--pri));
+  box-shadow:0 0 10px rgba(129,140,248,0.7);
+}
+
+.timeline-content h3{
+  font-size:0.98rem;
+  margin-bottom:4px;
+}
+
+.timeline-content p{
+  font-size:0.9rem;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* Final blok */
+
+.about-final{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  align-items:stretch;
+}
+
+.about-final > div{
+  flex:1 1 260px;
+}
+
+.about-final-box{
+  background:var(--card);
+  border-radius:18px;
+  border:1px solid var(--border);
+  padding:18px 16px;
+  font-size:0.9rem;
+}
+
+.about-final-box span{
+  color:var(--pri2);
+}
+
+.muted{
+  color:var(--muted);
+  font-size:0.82rem;
+  margin-top:8px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px){
+  .about-shell{
+    padding-top:80px;
+  }
+
+  .about-hero{
+    grid-template-columns:1fr;
+  }
+
+  .grid-2{
+    grid-template-columns:1fr;
+  }
+}
+
+.about-section-sub{
+  color:var(--muted);
+  font-size:0.9rem;
+  max-width:520px;
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+}
+
+.team-card{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:16px 14px;
+  background:var(--card);
+  border-radius:18px;
+  border:1px solid var(--border);
+  box-shadow:0 12px 25px rgba(15,23,42,0.7);
+  position:relative;
+  overflow:hidden;
+}
+
+.team-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:radial-gradient(circle at 0 0, rgba(99,102,241,0.28), transparent 60%);
+  transition:opacity .22s ease-out;
+  pointer-events:none;
+}
+
+.team-card:hover::before{
+  opacity:1;
+}
+
+.avatar{
+  flex-shrink:0;
+  width:44px;
+  height:44px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  font-size:1rem;
+  background:radial-gradient(circle at 30% 30%, var(--pri2), var(--pri));
+  box-shadow:0 10px 25px rgba(37,99,235,0.5);
+  color:white;
+}
+
+.team-info h3{
+  margin:0 0 2px;
+  font-size:0.98rem;
+}
+
+.role{
+  margin:0 0 6px;
+  font-size:0.82rem;
+  text-transform:uppercase;
+  letter-spacing:0.07em;
+  color:var(--muted);
+}
+
+.desc{
+  margin:0 0 8px;
+  font-size:0.88rem;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.chip-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.chip{
+  font-size:0.75rem;
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,0.4);
+  background:rgba(15,23,42,0.9);
+}

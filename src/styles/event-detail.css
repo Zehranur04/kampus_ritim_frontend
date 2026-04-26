@@ -1,0 +1,194 @@
+/* src/EtkinlikDetay.css */
+
+.etkinlik-sayfasi {
+  /* provide top spacing so content isn't hidden behind a fixed navbar */
+  margin-top: var(--event-detail-offset, 80px);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pri);
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--pri2);
+  text-decoration: none;
+}
+
+.sayfa-basligi {
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+.etkinlik-icerik {
+  display: flex;
+  gap: 24px;
+}
+.sol-sutun {
+  flex: 2;
+}
+.sag-sutun {
+  flex: 1;
+}
+.etkinlik-gorseli {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.etkinlik-gorseli:hover {
+  transform: scale(1.01);
+}
+.etkinlik-basligi {
+  font-size: 28px;
+  color: #222;
+  margin-top: 0;
+}
+.sol-sutun p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+.bilgi-kutusu {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--pri);
+  position: static;
+  top: 100px;
+}
+.bilgi-satiri {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+.bilgi-satiri:last-of-type { border-bottom: none; }
+.bilgi-satiri strong { color: #333; }
+.bilgi-satiri span { color: #666; text-align: right; }
+.basvur-butonu {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, var(--pri), var(--pri2));
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+.basvur-butonu--danger {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+.basvur-butonu:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  filter: brightness(1.1);
+}
+
+.basvur-butonu--danger:hover {
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+}
+
+.basvur-butonu:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+  .etkinlik-icerik { flex-direction: column; }
+  .sol-sutun, .sag-sutun { flex: none; width: 100%; }
+  /* reduce top offset on mobile (smaller navbar) */
+  .etkinlik-sayfasi { margin-top: var(--event-detail-mobile-offset, 56px); padding: 16px; }
+}
+/* --- YENİ EKLENEN BÖLÜMLER (Sertifika & Konuşmacı) --- */
+
+.ek-bolum {
+  /* Diğer içerikle arasına çizgi ve boşluk koy */
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.bolum-basligi {
+  font-size: 22px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.konusmaci-listesi {
+  display: flex; /* Konuşmacıları yan yana diz */
+  flex-wrap: wrap; /* Sığmazsa alt satıra indir */
+  gap: 16px; /* Aralarına boşluk koy */
+}
+
+.konusmaci-profil {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  background-color: #f9f9f9;
+  flex-basis: 150px;
+  flex-grow: 1;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.konusmaci-profil img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Resimleri yuvarlak yap */
+  object-fit: cover; /* Resmin orantısını koru */
+  margin-bottom: 10px;
+}
+
+.konusmaci-profil h4 {
+  font-size: 16px;
+  color: #222;
+  margin: 0 0 5px 0; /* Üst ve alt boşlukları sıfırla */
+}
+
+.konusmaci-profil span {
+  font-size: 14px;
+  color: #666;
+}
+
+.konusmaci-profil:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-color: var(--pri);
+}
+
+
+.rating-container span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.rating-container span:hover {
+  transform: scale(1.4) rotate(10deg);
+}

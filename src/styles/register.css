@@ -1,0 +1,347 @@
+/* ================================ */
+/* REGISTER PAGE SPECIFIC STYLES    */
+/* ================================ */
+
+/* Import common auth styles */
+@import "./auth-common.css";
+
+/* Register form - wider for more fields */
+.register-page .auth-form {
+  max-width: 460px;
+}
+
+.register-page .auth-container {
+  max-width: 1100px;
+}
+
+/* ============ STEP INDICATOR ============ */
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.step-circle {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.step-circle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.step-item.active .step-circle {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: var(--pri);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.step-item.completed .step-circle {
+  background: var(--ok);
+  border-color: var(--ok);
+  color: #fff;
+}
+
+.step-title {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.step-item.active .step-title {
+  color: var(--pri);
+  font-weight: 500;
+}
+
+.step-item.completed .step-title {
+  color: var(--ok);
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  margin: 0 0.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--ok);
+  transition: width 0.3s ease;
+}
+
+.step-line.completed::after {
+  width: 100%;
+}
+
+/* ============ FORM STEPS ============ */
+
+.form-step {
+  display: none;
+  animation: stepFadeIn 0.4s ease;
+}
+
+.form-step.active {
+  display: block;
+}
+
+@keyframes stepFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============ PASSWORD STRENGTH ============ */
+
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.strength-bar {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.strength-segment {
+  height: 4px;
+  flex: 1;
+  background: var(--border);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.strength-segment.active {
+  background: currentColor;
+}
+
+.password-strength span {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ============ TERMS CHECKBOX ============ */
+
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 2px;
+  accent-color: var(--pri);
+  cursor: pointer;
+}
+
+.terms-checkbox label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.terms-checkbox a {
+  color: var(--pri2);
+  text-decoration: none;
+}
+
+.terms-checkbox a:hover {
+  text-decoration: underline;
+}
+
+/* ============ FORM NAVIGATION ============ */
+
+.form-navigation {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.btn-prev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-prev:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--muted);
+}
+
+.btn-prev svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-next {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(135deg, var(--pri), #8b5cf6);
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.btn-next svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.btn-next:hover svg {
+  transform: translateX(4px);
+}
+
+/* Make the final register submit button match .btn-next */
+.btn-register {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(135deg, var(--pri), #8b5cf6);
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.btn-register svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.btn-register:hover svg {
+  transform: translateX(4px);
+}
+
+/* Ensure the submit button uses the same primary gradient as .btn-next
+   .auth-form .btn-action has higher specificity, so target that selector */
+.auth-form .btn-action.btn-register {
+  background: linear-gradient(135deg, var(--pri), #8b5cf6);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+  color: #fff;
+}
+
+.auth-form .btn-action.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+.auth-form .btn-action.btn-register svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.auth-form .btn-action.btn-register:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 520px) {
+  .step-indicator {
+    gap: 0.25rem;
+  }
+
+  .step-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .step-title {
+    display: none;
+  }
+
+  .step-line {
+    margin-bottom: 0;
+  }
+
+  .form-navigation {
+    flex-direction: column-reverse;
+  }
+
+  .btn-prev {
+    width: 100%;
+  }
+}

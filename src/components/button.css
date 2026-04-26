@@ -1,0 +1,14 @@
+.kr-btn{
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; border-radius:14px; padding:12px 16px; cursor:pointer; user-select:none;
+  border:1px solid #28325c; background:#0f1733; color:#e7ecf6; font-weight:700; letter-spacing:.2px;
+  transition:transform .08s ease, filter .2s ease, background .2s;
+}
+.kr-btn.primary{ background: linear-gradient(135deg, var(--pri), var(--pri2)); border:none; box-shadow: 0 12px 32px rgba(99,102,241,.4); }
+.kr-btn.ghost:hover{ background:#15204a; }
+.kr-btn:active{ transform: translateY(1px) scale(.997) }
+.kr-btn .glow{ position:absolute; inset:auto 14px -8px 14px; height:10px; background: radial-gradient(10px 5px at 50% 0%, rgba(34,211,238,.35), transparent 70%); opacity:.6; pointer-events:none;}
+.wfull{ width:100% }
+
+/* spacing between password fields and the full-width submit button on auth pages */
+.auth-card .kr-btn.wfull{ margin-top:18px }

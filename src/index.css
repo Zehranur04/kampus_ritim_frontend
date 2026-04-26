@@ -1,0 +1,15 @@
+@import "./styles/base.css";
+@import "./styles/events.css";
+@import "./styles/event-detail.css";
+@import "./styles/about.css";
+@import "./styles/clubs.css";
+@import "./styles/home.css";
+@import "./styles/navbar.css";
+@import "./styles/ClubDetail.css";
+@import "./styles/profile.css";
+@import "./styles/auth-common.css";
+@import "./styles/login.css";
+@import "./styles/register.css";
+@import "./styles/chatbot.css";
+@import "./styles/appointments.css";
+@import "./styles/static-pages.css";

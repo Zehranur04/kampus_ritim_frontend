@@ -1,0 +1,8 @@
+/* 
+ * Club Modal Styles
+ * Bu stiller ClubDetail.css'den alınmıştır.
+ * Tekrar önlemek için ClubDetail.css'deki modal stillerini kullanın.
+ */
+@import "./ClubDetail.css";
+
+/* Ek modal stilleri gerekirse buraya eklenebilir */
